@@ -1,0 +1,3 @@
+topic-name: salog-topic
+nr_partions: 5
+replicas: 1
