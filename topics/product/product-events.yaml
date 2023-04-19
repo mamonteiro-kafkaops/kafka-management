@@ -1,3 +1,8 @@
 topicName: product-events
 nr_partions: 3
 replicas: 1
+consumers:
+  - name: product
+    type: group
+  - name: pricing
+    type: group
