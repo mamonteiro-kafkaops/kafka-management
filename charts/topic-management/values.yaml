@@ -1,10 +1,10 @@
 topic:
-  name: "product-events"
+  name: "test-topic"
   partitions: 5
   replicas: 3
 
 consumers:
-  - name: product-user
+  - name: test-user
     type: group
-  - name: product-user-2
+  - name: test-user-2
     type: group

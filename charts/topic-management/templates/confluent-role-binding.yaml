@@ -1,0 +1,21 @@
+{{$topic:=.Values.topic.name}}
+{{- range $consumer := .Values.consumers }}
+apiVersion: platform.confluent.io/v1beta1
+kind: ConfluentRolebinding
+metadata:
+  name: {{$topic}}-{{$consumer.name}}-consumer
+  namespace: confluent
+spec:
+  principal:
+    name: {{$consumer.name}}
+    type: {{$consumer.type}}
+  # clustersScopeByIds:
+  #   schemaRegistryClusterId: <schema-registry-group-id>
+  #   kafkaClusterId: <kafka-cluster-id>
+  resourcePatterns:
+    - name: {{$topic}}
+      patternType: LITERAL
+      resourceType: Topic
+  role: DeveloperRead
+---
+  {{- end }}
