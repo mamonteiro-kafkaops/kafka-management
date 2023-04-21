@@ -1,3 +1,8 @@
-topicName: pricing-events
-nr_partions: 5
-replicas: 1
+topic:
+  name: "pricing-evvents"
+  partitions: 5
+  replicas: 3
+
+consumers:
+  - name: pricing-user
+    type: group

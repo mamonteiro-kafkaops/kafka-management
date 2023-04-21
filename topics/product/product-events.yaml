@@ -1,8 +1,10 @@
-topicName: product-events
-nr_partions: 3
-replicas: 1
+topic:
+  name: "product-events"
+  partitions: 5
+  replicas: 3
+
 consumers:
-  - name: product
+  - name: product-user
     type: group
-  - name: pricing
+  - name: product-user-2
     type: group

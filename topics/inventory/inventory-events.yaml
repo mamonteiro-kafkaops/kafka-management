@@ -1,3 +1,8 @@
-topicName: inventory-events
-nr_partions: 5
-replicas: 1
+topic:
+  name: "inventory-events"
+  partitions: 5
+  replicas: 3
+
+consumers:
+  - name: inventory-user
+    type: group
