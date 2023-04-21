@@ -1,10 +1,11 @@
-topic:
-  name: "product-events"
-  partitions: 5
-  replicas: 3
+values:
+  topic:
+    name: "product-events"
+    partitions: 5
+    replicas: 3
 
-consumers:
-  - name: product-user
-    type: group
-  - name: product-user-2
-    type: group
+  consumers:
+    - name: product-user
+      type: group
+    - name: product-user-2
+      type: group
