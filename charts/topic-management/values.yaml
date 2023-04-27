@@ -1,3 +1,10 @@
-topic: {}
+topic:
+  name: "test-topic"
+  partitions: 5
+  replicas: 3
 
-consumers: {}
+consumers:
+  - name: test-user
+    type: group
+  - name: test-user-2
+    type: group
