@@ -18,6 +18,6 @@ spec:
       resourceType: Topic
   role: DeveloperRead
   kafkaRestClassRef:
-    name: kafka
+    name: default
 ---
   {{- end }}
