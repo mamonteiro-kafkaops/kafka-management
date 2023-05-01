@@ -7,4 +7,4 @@ spec:
   partitionCount: {{.Values.topic.partitions}}
   replicas: {{.Values.topic.replicas}}
   configs:
-    cleanup.policy: "compact"
+    cleanup.policy: "delete"
