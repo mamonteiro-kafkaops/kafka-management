@@ -1,3 +1,6 @@
+confluentRolebinding:
+  enabled: false
+
 topic:
   name: "test-topic"
   partitions: 5
