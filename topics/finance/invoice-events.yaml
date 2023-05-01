@@ -5,4 +5,4 @@ topic:
 
 consumers:
   - name: invoice-user
-    type: Group
+    type: group
