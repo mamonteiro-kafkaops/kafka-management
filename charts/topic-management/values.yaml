@@ -4,7 +4,7 @@ confluentRolebinding:
 topic:
   name: "test-topic"
   partitions: 5
-  replicas: 3
+  replicas: 1
 
 consumers:
   - name: test-user
