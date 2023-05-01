@@ -5,4 +5,4 @@ topic:
 
 consumers:
   - name: pricing-user
-    type: group
+    type: Group

@@ -1,8 +1,8 @@
 topic:
-  name: "pricing-comands"
+  name: "pricing-commands"
   partitions: 5
   replicas: 3
 
 consumers:
   - name: pricing-user
-    type: user
+    type: User
