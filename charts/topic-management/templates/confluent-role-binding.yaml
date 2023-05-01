@@ -17,5 +17,7 @@ spec:
       patternType: LITERAL
       resourceType: Topic
   role: DeveloperRead
+  kafkaRestClassRef:
+    name: kafka
 ---
   {{- end }}
