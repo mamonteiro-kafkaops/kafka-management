@@ -1,6 +1,6 @@
 topic:
-  name: "pricing-evvents"
-  partitions: 6
+  name: "pricing-events"
+  partitions: 5
 
 consumers:
   - name: pricing-user
