@@ -1,0 +1,10 @@
+topic:
+  name: "product-commands"
+  partitions: 5
+  replicas: 3
+
+consumers:
+  - name: product-user
+    type: group
+  - name: product-user-2
+    type: group
