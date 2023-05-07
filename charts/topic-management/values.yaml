@@ -1,10 +1,14 @@
 confluentRolebinding:
   enabled: false
 
-topic:
-  name: ""
-  partitions: 3
-  replicas: 2
+info:
+  title: example
+  version: '1.0.0'
+  description: |
+    example service is responsible to managed things
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
 
 consumers: {}
   # - name: test-user
