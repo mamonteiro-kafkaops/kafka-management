@@ -1,0 +1,26 @@
+{
+    "type": "record",
+    "name": "ProductCreated",
+    "fields": [
+      {
+        "name": "id",
+        "type": "int"
+      },
+      {
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "name": "description",
+        "type": "string"
+      },
+      {
+        "name": "variant",
+        "type": "string"
+      },
+      {
+        "name": "basePrice",
+        "type": "double"
+      }
+    ]
+  }

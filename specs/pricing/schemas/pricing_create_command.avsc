@@ -1,0 +1,18 @@
+{
+    "type": "record",
+    "name": "PriceCreated",
+    "fields": [
+      {
+        "name": "price",
+        "type": "double"
+      },
+      {
+        "name": "productId",
+        "type": "int"
+      },
+      {
+        "name": "discount",
+        "type": "double"
+      }
+    ]
+}

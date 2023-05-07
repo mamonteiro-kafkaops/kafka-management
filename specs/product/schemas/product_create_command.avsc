@@ -1,0 +1,22 @@
+{
+    "type": "record",
+    "name": "ProductCreateCommand",
+    "fields": [
+      {
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "name": "description",
+        "type": "string"
+      },
+      {
+        "name": "variant",
+        "type": "string"
+      },
+      {
+        "name": "basePrice",
+        "type": "double"
+      }
+    ]
+}

@@ -1,0 +1,111 @@
+asyncapi: '2.6.0'
+id: 'urn:kn:com:pricing:service:server'
+info:
+  title: pricing-service
+  version: '1.0.0'
+  description: |
+    pricing service is responsible to managed pricings
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+
+defaultContentType: application/vnd.confluent.avro
+
+servers:
+  production:
+    url: kafka.mycompany.com
+    protocol: kafka
+    description: This is kafka broker.
+    security:
+      - saslScram: []
+    bindings:
+      kafka:
+        schemaRegistryUrl: 'https://my-schema-registry.com'
+        schemaRegistryVendor: 'confluent'
+        bindingVersion: '0.4.0'
+
+channels:
+  pricing.created:
+    subscribe:
+      operationId: pricingCreatedHandler
+      message:
+        name: PricingCreated
+        summary: The event published after pricing created.
+        contentType: application/json
+        schemaFormat: 'application/vnd.apache.avro+yaml;version=1.9.0'
+        payload:
+          $ref: './schemas/pricing_created.avsc'
+        headers:
+          $ref: '#/components/schemas/headers'
+    bindings:
+      kafka:
+        topic: 'kn.pricing.created.v1'
+        partitions: 3
+        replicas: 2
+        clientId:
+          type: string
+          enum:
+            - consumer1
+            - consumer2       
+        topicConfiguration:
+          cleanup.policy: ["delete"]
+          retention.ms: 604800000
+          retention.bytes: 1000000000
+          delete.retention.ms: 86400000
+          max.message.bytes: 1048588
+        bindingVersion: '0.4.0'  
+    x-producers:
+      - pricing-service      
+    x-consumers:
+      - product-service
+      - product-api
+    x-owners:
+      - rui.eusebio
+      - nuno.alves
+      - dboyne
+
+  pricing.create.command:
+    publish:
+      operationId: PriceCreateCommandHandler
+      message:
+        name: Price create command
+        summary: create price for a product-api
+        contentType: application/avro
+        schemaFormat: 'application/vnd.apache.avro+yaml;version=1.9.0'
+        payload:
+          $ref: './schemas/pricing_create_command.avsc'
+        headers:
+          $ref: '#/components/schemas/headers'
+    bindings:
+      kafka:
+        topic: 'kn.pricing.create.command.v1'
+        partitions: 3
+        replicas: 2
+        clientId:
+          type: string
+          enum:
+            - producer1
+            - producer2       
+        topicConfiguration:
+          cleanup.policy: ["delete"]
+          retention.ms: 604800000
+          retention.bytes: 1000000000
+          delete.retention.ms: 86400000
+          max.message.bytes: 1048588
+        bindingVersion: '0.4.0'  
+
+components:
+  schemas:
+    headers:
+      type: object
+      properties:
+        correlationId:
+          type: string
+          format: uuid
+        createdAt:
+          type: string
+          format: datetime 
+  securitySchemes:
+    saslScram:
+      type: scramSha256
+      description: Provide your username and password for SASL/SCRAM authentication
