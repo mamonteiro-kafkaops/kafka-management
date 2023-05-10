@@ -1,7 +1,0 @@
-topic:
-  name: "invoice-events"
-  partitions: 5
-
-consumers:
-  - name: invoice-user
-    type: group

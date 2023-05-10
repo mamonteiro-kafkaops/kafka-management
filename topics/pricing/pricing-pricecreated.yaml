@@ -1,7 +1,0 @@
-topic:
-  name: "pricing-price-created"
-  partitions: 5
-
-consumers:
-  - name: pricing-user
-    type: group

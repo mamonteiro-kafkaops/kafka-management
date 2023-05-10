@@ -1,7 +1,0 @@
-topic:
-  name: "inventory-commands"
-  partitions: 5
-
-consumers:
-  - name: inventory-user
-    type: group

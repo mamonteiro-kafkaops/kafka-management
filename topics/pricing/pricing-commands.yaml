@@ -1,7 +1,0 @@
-topic:
-  name: "pricing-commands"
-  partitions: 5
-
-consumers:
-  - name: pricing-user
-    type: user
