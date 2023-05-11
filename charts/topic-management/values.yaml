@@ -4,6 +4,9 @@ confluentRolebinding:
 kafkaServiceAccount:
   enabled: false
 
+notification:
+  enabled: false
+  
 info:
   title: example
   version: '1.0.0'
