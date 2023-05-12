@@ -50,7 +50,7 @@ channels:
           type: string
           enum:
             - consumer1
-            - consumer2       
+            - consumer2
         topicConfiguration:
           cleanup.policy: ["delete"]
           retention.ms: 604800000

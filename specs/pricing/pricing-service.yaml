@@ -8,6 +8,9 @@ info:
   license:
     name: Apache 2.0
     url: https://www.apache.org/licenses/LICENSE-2.0
+  x-maintainers:
+    - rui.eusebio
+    - joao.dias
 
 defaultContentType: application/vnd.confluent.avro
 
@@ -40,29 +43,21 @@ channels:
     bindings:
       kafka:
         topic: 'kn.pricing.created.v1'
-        partitions: 2
+        partitions: 3
         replicas: 2
         clientId:
           type: string
           enum:
             - consumer1
-            - consumer2       
+            - consumer2
+            - joao   
         topicConfiguration:
           cleanup.policy: ["delete"]
           retention.ms: 604800000
           retention.bytes: 1000000000
           delete.retention.ms: 86400000
           max.message.bytes: 1048588
-        bindingVersion: '0.4.0'  
-    x-producers:
-      - pricing-service      
-    x-consumers:
-      - product-service
-      - product-api
-    x-owners:
-      - rui.eusebio
-      - nuno.alves
-      - dboyne
+        bindingVersion: '0.4.0'
 
   pricing.create.command:
     publish:
