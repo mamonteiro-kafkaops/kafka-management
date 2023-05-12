@@ -27,7 +27,7 @@ servers:
 channels:
   pricing.created:
     subscribe:
-      operationId: pricingCreatedHandler
+      operationId: pricingCreatedMethodHandler
       message:
         name: PricingCreated
         summary: The event published after pricing created.
