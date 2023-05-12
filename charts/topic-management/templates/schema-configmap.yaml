@@ -10,6 +10,6 @@ metadata:
   namespace: confluent
 data:
   schema: |-
-    {{ .Files.Get "../specs/pricing/schemas/pricing_created.avsc" | indent 4 }}
+    {{ .Files.Get "../../specs/pricing/schemas/pricing_created.avsc" | indent 4 }}
 ---
 {{ end }} 
