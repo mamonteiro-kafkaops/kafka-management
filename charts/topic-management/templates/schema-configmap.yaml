@@ -1,0 +1,15 @@
+{{ range $channel := .Values.channels }}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+{{- if $channel.subscribe }}
+  name: schema-config-{{$channel.subscribe.message.name}}
+{{- else }}
+  name: schema-config-{{$channel.publish.message.name}}
+{{- end }}
+  namespace: confluent
+data:
+  schema: |-
+    {{ .Files.Get "../specs/pricing/schemas/pricing_created.avsc" | indent 4 }}
+---
+{{ end }} 

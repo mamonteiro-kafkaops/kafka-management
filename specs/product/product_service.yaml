@@ -35,7 +35,7 @@ channels:
       message:
         name: productCreated
         summary: The event published after product created.
-        contentType: application/json
+        contentType: avro
         schemaFormat: 'application/vnd.apache.avro+yaml;version=1.9.0'
         payload:
           $ref: './schemas/product_created.avsc'
@@ -46,11 +46,9 @@ channels:
         topic: 'kn.product.created.v1'
         partitions: 3
         replicas: 2
-        clientId:
-          type: string
-          enum:
-            - consumer1
-            - consumer2
+        consumers:
+          - consumer1
+          - consumer2
         topicConfiguration:
           cleanup.policy: ["delete"]
           retention.ms: 604800000
@@ -65,7 +63,7 @@ channels:
       message:
         name: Price create command
         summary: create price for a product-api
-        contentType: application/avro
+        contentType: avro
         schemaFormat: 'application/vnd.apache.avro+yaml;version=1.9.0'
         payload:
           $ref: './schemas/product_create_command.avsc'
@@ -76,7 +74,7 @@ channels:
         topic: 'kn.product.create.command.v1'
         partitions: 3
         replicas: 2
-        clientId:
+        producers:
           type: string
           enum:
             - producer1

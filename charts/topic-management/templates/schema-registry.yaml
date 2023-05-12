@@ -1,0 +1,21 @@
+{{ range $channel := .Values.channels }}
+apiVersion: platform.confluent.io/v1beta1
+kind: Schema
+metadata:
+{{- if $channel.subscribe }}
+  name: {{$channel.subscribe.message.name}}
+{{- else }}
+  name: {{$channel.publish.message.name}}
+{{- end }}
+  namespace: confluent
+spec:
+  data:
+  {{- if $channel.subscribe }}
+    configRef: schema-config-{{$channel.subscribe.message.name}}
+    format: {{$channel.subscribe.message.contentType}}
+  {{- else }}
+    configRef: schema-config-{{$channel.publish.message.name}}
+    format: {{$channel.publish.message.contentType}}
+  {{- end }}
+---
+{{ end }}

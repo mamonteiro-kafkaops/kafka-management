@@ -34,7 +34,7 @@ channels:
       message:
         name: PricingCreated
         summary: The event published after pricing created.
-        contentType: application/json
+        contentType: avro
         schemaFormat: 'application/vnd.apache.avro+yaml;version=1.9.0'
         payload:
           $ref: './schemas/pricing_created.avsc'
@@ -65,7 +65,7 @@ channels:
       message:
         name: Price create command
         summary: create price for a product-api
-        contentType: application/avro
+        contentType: avro
         schemaFormat: 'application/vnd.apache.avro+yaml;version=1.9.0'
         payload:
           $ref: './schemas/pricing_create_command.avsc'
@@ -95,7 +95,7 @@ channels:
       message:
         name: Price create command
         summary: create price for a product-api
-        contentType: application/avro
+        contentType: avro
         schemaFormat: 'application/vnd.apache.avro+yaml;version=1.9.0'
         payload:
           $ref: './schemas/pricing_create_command.avsc'
