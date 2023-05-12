@@ -2,7 +2,7 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: "{{.Values.info.title}}-job"
+  name: "notification-job"
   namespace: confluent
   labels:
     app.kubernetes.io/managed-by: {{ .Release.Service | quote }}
@@ -18,11 +18,11 @@ metadata:
 spec:
   template:
     metadata:
-      name: "{{.Values.info.title}}-job"
+      name: "notification-job"
       labels:
         app.kubernetes.io/managed-by: {{ .Release.Service | quote }}
         app.kubernetes.io/instance: {{ .Release.Name | quote }}
-        helm.sh/chart: "{{ .Chart.Name }}-{{ .Chart.Version }}-{{.Values.info.title}}"
+        helm.sh/chart: "{{ .Chart.Name }}-{{ .Chart.Version }}-notification-job"
     spec:
       restartPolicy: Never
       containers:
