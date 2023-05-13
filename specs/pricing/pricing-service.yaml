@@ -32,7 +32,7 @@ channels:
     subscribe:
       operationId: pricingCreatedMethodHandler
       message:
-        name: PricingCreated
+        name: pricing-created
         summary: The event published after pricing created.
         contentType: avro
         schemaFormat: 'application/vnd.apache.avro+yaml;version=1.9.0'
@@ -63,7 +63,7 @@ channels:
     publish:
       operationId: PriceCreateCommandHandler
       message:
-        name: priceCreateCommand
+        name: price-create-command
         summary: create price for a product-api
         contentType: avro
         schemaFormat: 'application/vnd.apache.avro+yaml;version=1.9.0'
@@ -93,7 +93,7 @@ channels:
     publish:
       operationId: PriceCreateCommandHandlerv2
       message:
-        name: priceCreateCommandv2
+        name: price-create-command-v2
         summary: create price for a product-api
         contentType: avro
         schemaFormat: 'application/vnd.apache.avro+yaml;version=1.9.0'

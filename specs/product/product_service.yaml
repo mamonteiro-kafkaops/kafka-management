@@ -33,7 +33,7 @@ channels:
     subscribe:
       operationId: productCreatedHandler
       message:
-        name: productCreated
+        name: product-created
         summary: The event published after product created.
         contentType: avro
         schemaFormat: 'application/vnd.apache.avro+yaml;version=1.9.0'
@@ -61,7 +61,7 @@ channels:
     publish:
       operationId: ProductCreateCommandHandler
       message:
-        name: productCreateCommand
+        name: product-create-command
         summary: create product for a product-api
         contentType: avro
         schemaFormat: 'application/vnd.apache.avro+yaml;version=1.9.0'
