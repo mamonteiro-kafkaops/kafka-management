@@ -10,14 +10,14 @@ metadata:
   namespace: confluent
 {{- if $channel.subscribe }}
 data:
-  {{- range $path, $d := $.Files.Glob "{{.Values.schemasDirectory}}/**.**" }}
-  {{ $path }}: |-
+  {{- range $path, $d := $.Files.Glob "/{{.Values.schemasDirectory}}/**.**" }}
+  schema: |
   {{- $d | toString | nindent 4 }}
   {{ end }}
 {{- else }}
 data:
-  {{- range $path, $d := $.Files.Glob "{{.Values.schemasDirectory}}/**.**" }}
-  {{ $path }}: |-
+  {{- range $path, $d := $.Files.Glob "/{{.Values.schemasDirectory}}/**.**" }}
+  schema: |
   {{- $d | toString | nindent 4 }}
   {{ end }}
 {{- end }}
