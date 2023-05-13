@@ -3,9 +3,9 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
 {{- if $channel.subscribe }}
-  name: schema-config-{{$channel.subscribe.message.name}}
+  name: lower schema-config-{{$channel.subscribe.message.name}}
 {{- else }}
-  name: schema-config-{{$channel.publish.message.name}}
+  name: lower schema-config-{{$channel.publish.message.name}}
 {{- end }}
   namespace: confluent
 {{- if $channel.subscribe }}
