@@ -10,6 +10,8 @@ notification:
 manageAclsJob:
   enabled: true
 
+schemasDirectory: ""
+
 info:
   title: example
   version: '1.0.0'

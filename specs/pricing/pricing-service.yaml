@@ -37,7 +37,7 @@ channels:
         contentType: avro
         schemaFormat: 'application/vnd.apache.avro+yaml;version=1.9.0'
         payload:
-          $ref: './schemas/pricing_created.avsc'
+          $ref: 'schemas/pricing_created.avsc'
         headers:
           $ref: '#/components/schemas/headers'
     bindings:

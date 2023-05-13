@@ -8,8 +8,18 @@ metadata:
   name: schema-config-{{$channel.publish.message.name}}
 {{- end }}
   namespace: confluent
+{{- if $channel.subscribe }}
 data:
-  schema: |-
-    {{ .Files.Get "./schemas/product_created.avsc" | indent 4 }}
+  {{- range $path, $d := $.Files.Glob "{{.Values.schemasDirectory}}/**.**" }}
+  {{ $path }}: |-
+  {{- $d | toString | nindent 4 }}
+  {{ end }}
+{{- else }}
+data:
+  {{- range $path, $d := $.Files.Glob "{{.Values.schemasDirectory}}/**.**" }}
+  {{ $path }}: |-
+  {{- $d | toString | nindent 4 }}
+  {{ end }}
+{{- end }}
 ---
 {{ end }} 
