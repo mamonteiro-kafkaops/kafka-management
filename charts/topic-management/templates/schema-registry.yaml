@@ -3,21 +3,12 @@
 apiVersion: platform.confluent.io/v1beta1
 kind: Schema
 metadata:
-{{- if $channel.subscribe }}
-  name: {{$channel.subscribe.message.name}}-value
-{{- else }}
-  name: {{$channel.publish.message.name}}-value
-{{- end }}
+  name: {{$channel.bindings.kafka.topic}}-value
   namespace: confluent
 spec:
   data:
-  {{- if $channel.subscribe }}
-    configRef: schema-config-{{$channel.subscribe.message.name}}-value
-    format: {{$channel.subscribe.message.contentType}}
-  {{- else }}
-    configRef: schema-config-{{$channel.publish.message.name}}-value
-    format: {{$channel.publish.message.contentType}}
-  {{- end }}
+    configRef: schema-config-{{$channel.bindings.kafka.topic}}-value
+    format: {{$channel.bindings.kafka.schemaIdPayloadEncoding}}
 ---
 {{ end }}
 {{ end }}

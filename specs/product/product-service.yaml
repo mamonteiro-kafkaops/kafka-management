@@ -38,12 +38,13 @@ channels:
         contentType: avro
         schemaFormat: 'application/vnd.apache.avro+yaml;version=1.9.0'
         payload:
-          $ref: './schemas/product-created.avsc'
+          $ref: './schemas/kn.product.created.v1.avsc'
         headers:
           $ref: '#/components/schemas/headers'
     bindings:
       kafka:
         topic: 'product-created'
+        schemaIdPayloadEncoding: 'avro'
         partitions: 3
         replicas: 2
         consumers:
@@ -66,12 +67,13 @@ channels:
         contentType: avro
         schemaFormat: 'application/vnd.apache.avro+yaml;version=1.9.0'
         payload:
-          $ref: './schemas/product-create-command.avsc'
+          $ref: './schemas/kn.product.create.command.v1.avsc'
         headers:
           $ref: '#/components/schemas/headers'
     bindings:
       kafka:
         topic: 'product-create-command'
+        schemaIdPayloadEncoding: 'avro'
         partitions: 3
         replicas: 2
         producers:

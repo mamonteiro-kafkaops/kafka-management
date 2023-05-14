@@ -37,12 +37,13 @@ channels:
         contentType: avro
         schemaFormat: 'application/vnd.apache.avro+yaml;version=1.9.0'
         payload:
-          $ref: 'schemas/pricing-created.avsc'
+          $ref: 'schemas/kn.pricing.created.v1.avsc'
         headers:
           $ref: '#/components/schemas/headers'
     bindings:
       kafka:
         topic: 'pricing-created'
+        schemaIdPayloadEncoding: 'avro'
         partitions: 2
         replicas: 2
         clientId:
@@ -68,19 +69,20 @@ channels:
         contentType: avro
         schemaFormat: 'application/vnd.apache.avro+yaml;version=1.9.0'
         payload:
-          $ref: './schemas/pricing-create-command.avsc'
+          $ref: './schemas/kn.pricing.create.command.v1.avsc'
         headers:
           $ref: '#/components/schemas/headers'
     bindings:
       kafka:
-        topic: 'pricing-create-command'
+        topic: 'kn.pricing.create.command.v1'
+        schemaIdPayloadEncoding: 'avro'
         partitions: 3
         replicas: 2
         clientId:
           type: string
           enum:
             - producer1
-            - producer2       
+            - producer2
         topicConfiguration:
           cleanup.policy: ["delete"]
           retention.ms: 604800000

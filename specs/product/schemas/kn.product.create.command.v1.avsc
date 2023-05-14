@@ -1,0 +1,23 @@
+{
+  "namespace": "io.confluent.avro",
+  "type": "record",
+  "name": "kn.product.create.command.v1",
+  "fields": [
+    {
+      "name": "name",
+      "type": "string"
+    },
+    {
+      "name": "description",
+      "type": "string"
+    },
+    {
+      "name": "variant",
+      "type": "string"
+    },
+    {
+      "name": "basePrice",
+      "type": "double"
+    }
+  ]
+}
