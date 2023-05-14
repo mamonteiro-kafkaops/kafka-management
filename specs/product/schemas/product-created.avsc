@@ -1,6 +1,6 @@
 {
     "type": "record",
-    "name": "ProductCreated",
+    "name": "kn.product.created.v1",
     "fields": [
       {
         "name": "id",
