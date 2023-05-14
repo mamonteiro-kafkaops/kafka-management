@@ -37,7 +37,7 @@ channels:
         contentType: avro
         schemaFormat: 'application/vnd.apache.avro+yaml;version=1.9.0'
         payload:
-          $ref: 'schemas/pricing_created.avsc'
+          $ref: 'schemas/pricing-created.avsc'
         headers:
           $ref: '#/components/schemas/headers'
     bindings:
@@ -68,7 +68,7 @@ channels:
         contentType: avro
         schemaFormat: 'application/vnd.apache.avro+yaml;version=1.9.0'
         payload:
-          $ref: './schemas/pricing_create_command.avsc'
+          $ref: './schemas/pricing-create-command.avsc'
         headers:
           $ref: '#/components/schemas/headers'
     bindings:
@@ -98,7 +98,7 @@ channels:
         contentType: avro
         schemaFormat: 'application/vnd.apache.avro+yaml;version=1.9.0'
         payload:
-          $ref: './schemas/pricing_create_command.avsc'
+          $ref: './schemas/pricing-create-command.avsc'
         headers:
           $ref: '#/components/schemas/headers'
     bindings:

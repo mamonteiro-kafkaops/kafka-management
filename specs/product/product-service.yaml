@@ -38,7 +38,7 @@ channels:
         contentType: avro
         schemaFormat: 'application/vnd.apache.avro+yaml;version=1.9.0'
         payload:
-          $ref: './schemas/product_created.avsc'
+          $ref: './schemas/product-created.avsc'
         headers:
           $ref: '#/components/schemas/headers'
     bindings:
@@ -66,7 +66,7 @@ channels:
         contentType: avro
         schemaFormat: 'application/vnd.apache.avro+yaml;version=1.9.0'
         payload:
-          $ref: './schemas/product_create_command.avsc'
+          $ref: './schemas/product-create-command.avsc'
         headers:
           $ref: '#/components/schemas/headers'
     bindings:
