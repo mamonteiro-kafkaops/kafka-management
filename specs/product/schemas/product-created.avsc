@@ -1,4 +1,5 @@
 {
+    "namespace": "io.confluent.examples.clients.basicavro",  
     "type": "record",
     "name": "kn.product.created.v1",
     "fields": [

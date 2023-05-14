@@ -1,6 +1,7 @@
 {
+    "namespace": "io.confluent.examples.clients.basicavro",  
     "type": "record",
-    "name": "PriceCreated",
+    "name": "kn.pricing.create.command.v1",
     "fields": [
       {
         "name": "price",

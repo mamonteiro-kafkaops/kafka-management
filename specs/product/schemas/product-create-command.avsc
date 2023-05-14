@@ -1,6 +1,7 @@
 {
+    "namespace": "io.confluent.examples.clients.basicavro",  
     "type": "record",
-    "name": "ProductCreateCommand",
+    "name": "kn.product.create.command.v1",
     "fields": [
       {
         "name": "name",
