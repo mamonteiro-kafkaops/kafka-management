@@ -18,6 +18,10 @@
       {
         "name": "color",
         "type": "string"
+      },
+      {
+        "name": "test",
+        "type": "string"
       }
     ]
 }
