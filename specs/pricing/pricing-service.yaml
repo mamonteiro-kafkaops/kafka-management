@@ -42,7 +42,7 @@ channels:
           $ref: '#/components/schemas/headers'
     bindings:
       kafka:
-        topic: 'pricing-created'
+        topic: 'kn.pricing.created.v1'
         schemaIdPayloadEncoding: 'avro'
         partitions: 2
         replicas: 2

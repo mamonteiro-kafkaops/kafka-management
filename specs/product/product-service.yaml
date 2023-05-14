@@ -43,7 +43,7 @@ channels:
           $ref: '#/components/schemas/headers'
     bindings:
       kafka:
-        topic: 'product-created'
+        topic: 'kn.product.created.v1'
         schemaIdPayloadEncoding: 'avro'
         partitions: 3
         replicas: 2
@@ -72,7 +72,7 @@ channels:
           $ref: '#/components/schemas/headers'
     bindings:
       kafka:
-        topic: 'product-create-command'
+        topic: 'kn.product.create.command.v1'
         schemaIdPayloadEncoding: 'avro'
         partitions: 3
         replicas: 2
