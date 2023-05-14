@@ -5,6 +5,8 @@ kind: Schema
 metadata:
   name: {{$channel.bindings.kafka.topic}}-value
   namespace: confluent
+  annotations:
+    checksum/config: {{ include (print $.Template.BasePath "/schema-configmap.yaml") . | sha256sum }}  
 spec:
   data:
     configRef: schema-config-{{$channel.bindings.kafka.topic}}-value
