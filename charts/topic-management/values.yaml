@@ -10,7 +10,7 @@ notification:
 manageAclsJob:
   enabled: true
 
-schemasDirectory: ""
+schemasDirectory: "specs/pricing/schemas"
 
 info:
   title: example

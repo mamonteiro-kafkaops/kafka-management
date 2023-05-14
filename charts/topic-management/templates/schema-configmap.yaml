@@ -1,27 +1,13 @@
-{{ range $channel := .Values.channels }}
+{{- range $path, $d := $.Files.Glob (printf "%s/**.**" .Values.schemasDirectory) }}
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  labels:
-    app: {{ .Values.schemasDirectory }}
-{{- if $channel.subscribe }}
-  name: schema-config-{{$channel.subscribe.message.name}}
-{{- else }}
-  name: schema-config-{{$channel.publish.message.name}}
-{{- end }}
+{{- $cleanExtension := $path | regexFind "(?:[^/]+/){3}([^/.]+)" }}
+{{- $splitString := $cleanExtension | split "/" }}
+  name: {{$splitString._3}}
   namespace: confluent
-{{- if $channel.subscribe }}
 data:
-  {{- range $path, $d := $.Files.Glob "/{{.Values.schemasDirectory}}/**.**" }}
   schema: |
   {{- $d | toString | nindent 4 }}
-  {{ end }}
-{{- else }}
-data:
-  {{- range $path, $d := $.Files.Glob "/{{.Values.schemasDirectory}}/**.**" }}
-  schema: |
-  {{- $d | toString | nindent 4 }}
-  {{ end }}
-{{- end }}
 ---
 {{ end }} 
