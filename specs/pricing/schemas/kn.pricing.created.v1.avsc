@@ -18,10 +18,6 @@
     {
       "name": "discount",
       "type": "double"
-    },
-    {
-      "name": "test",
-      "type": "double"
-    }    
+    }   
   ]
 }
