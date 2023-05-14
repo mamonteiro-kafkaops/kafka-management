@@ -5,7 +5,7 @@ kind: ConfigMap
 metadata:
 {{- $cleanExtension := $path | regexFind "(?:[^/]+/){3}([^/.]+)" }}
 {{- $splitString := $cleanExtension | split "/" }}
-  name: schema-config-{{$splitString._3}}-value
+  name: schema-config-{{$splitString._3}}
   namespace: confluent
 data:
   schema: |

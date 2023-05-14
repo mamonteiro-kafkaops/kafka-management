@@ -42,7 +42,7 @@ channels:
           $ref: '#/components/schemas/headers'
     bindings:
       kafka:
-        topic: 'kn.pricing.created.v1'
+        topic: 'pricing-created'
         partitions: 2
         replicas: 2
         clientId:
@@ -63,7 +63,7 @@ channels:
     publish:
       operationId: PriceCreateCommandHandler
       message:
-        name: pricing-create-command-value
+        name: pricing-create-command
         summary: create price for a product-api
         contentType: avro
         schemaFormat: 'application/vnd.apache.avro+yaml;version=1.9.0'

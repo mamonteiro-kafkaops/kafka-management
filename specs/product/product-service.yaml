@@ -43,7 +43,7 @@ channels:
           $ref: '#/components/schemas/headers'
     bindings:
       kafka:
-        topic: 'kn.product.created.v1'
+        topic: 'product-created'
         partitions: 3
         replicas: 2
         consumers:
@@ -71,7 +71,7 @@ channels:
           $ref: '#/components/schemas/headers'
     bindings:
       kafka:
-        topic: 'kn.product.create.command.v1'
+        topic: 'product-create-command'
         partitions: 3
         replicas: 2
         producers:
