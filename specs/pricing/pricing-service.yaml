@@ -73,7 +73,7 @@ channels:
           $ref: '#/components/schemas/headers'
     bindings:
       kafka:
-        topic: 'kn.pricing.create.command.v1'
+        topic: 'pricing-create-command'
         partitions: 3
         replicas: 2
         clientId:
