@@ -1,8 +1,9 @@
 {{if .Values.manageAclsJob.enabled}}
+{{- $guid := uuid -}}
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: "manage-acls-job"
+  name: "manage-acls-job-{{$guid}}"
   namespace: confluent
   labels:
     app.kubernetes.io/managed-by: {{ .Release.Service | quote }}
@@ -18,7 +19,7 @@ metadata:
 spec:
   template:
     metadata:
-      name: "manage-acls-job"
+      name: "manage-acls-job-{{$guid}}"
       labels:
         app.kubernetes.io/managed-by: {{ .Release.Service | quote }}
         app.kubernetes.io/instance: {{ .Release.Name | quote }}
