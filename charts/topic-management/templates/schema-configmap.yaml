@@ -1,3 +1,4 @@
+{{if .Values.schemaRegistry.enabled}}
 {{- range $path, $d := $.Files.Glob (printf "%s/**.**" .Values.schemasDirectory) }}
 apiVersion: v1
 kind: ConfigMap
@@ -10,4 +11,5 @@ data:
   schema: |
   {{- $d | toString | nindent 4 }}
 ---
-{{ end }} 
+{{ end }}
+{{ end }}
