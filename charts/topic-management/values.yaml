@@ -10,6 +10,9 @@ notification:
 manageAclsJob:
   enabled: true
 
+schemaRegistry:
+  enabled: true
+
 schemasDirectory: "specs/pricing/schemas"
 
 info:

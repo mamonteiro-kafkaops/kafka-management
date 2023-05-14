@@ -1,3 +1,4 @@
+{{if .Values.schemaRegistry.enabled}}
 {{ range $channel := .Values.channels }}
 apiVersion: platform.confluent.io/v1beta1
 kind: Schema
@@ -18,4 +19,5 @@ spec:
     format: {{$channel.publish.message.contentType}}
   {{- end }}
 ---
+{{ end }}
 {{ end }}
