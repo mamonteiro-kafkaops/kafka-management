@@ -1,5 +1,5 @@
 {{if .Values.manageAclsJob.enabled}}
-{{- $guid := uuid -}}
+{{- $guid := uuidv4 -}}
 apiVersion: batch/v1
 kind: Job
 metadata:
