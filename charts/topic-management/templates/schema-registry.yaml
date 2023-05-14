@@ -4,9 +4,9 @@ apiVersion: platform.confluent.io/v1beta1
 kind: Schema
 metadata:
 {{- if $channel.subscribe }}
-  name: {{$channel.subscribe.message.name}}
+  name: {{$channel.subscribe.message.name}}-value
 {{- else }}
-  name: {{$channel.publish.message.name}}
+  name: {{$channel.publish.message.name}}-value
 {{- end }}
   namespace: confluent
 spec:
