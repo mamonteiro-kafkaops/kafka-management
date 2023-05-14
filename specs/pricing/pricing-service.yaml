@@ -63,7 +63,7 @@ channels:
     publish:
       operationId: PriceCreateCommandHandler
       message:
-        name: pricing-create-command
+        name: pricing-create-command-value
         summary: create price for a product-api
         contentType: avro
         schemaFormat: 'application/vnd.apache.avro+yaml;version=1.9.0'
