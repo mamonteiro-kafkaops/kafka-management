@@ -84,7 +84,7 @@ channels:
             - consumer2
             - joao
         topicConfiguration:
-          cleanup.policy: ["delete"]
+          cleanup.policy: ["compact"]
           retention.ms: 604800000
           retention.bytes: 1000000000
           delete.retention.ms: 86400000
