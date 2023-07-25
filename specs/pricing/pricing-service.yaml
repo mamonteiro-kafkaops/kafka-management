@@ -44,7 +44,7 @@ channels:
       kafka:
         topic: 'kn.pricing.created.v1'
         schemaIdPayloadEncoding: 'avro'
-        partitions: 2
+        partitions: 3
         replicas: 2
         clientId:
           type: string
