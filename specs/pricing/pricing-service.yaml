@@ -59,6 +59,37 @@ channels:
           delete.retention.ms: 86400000
           max.message.bytes: 1048588
         bindingVersion: '0.4.0'
+  pricing.test:
+    subscribe:
+      operationId: pricingCreatedMethodHandler
+      message:
+        name: pricing-created
+        summary: The event published after pricing created.
+        contentType: avro
+        schemaFormat: 'application/vnd.apache.avro+yaml;version=1.9.0'
+        payload:
+          $ref: 'schemas/kn.pricing.created.v1.avsc'
+        headers:
+          $ref: '#/components/schemas/headers'
+    bindings:
+      kafka:
+        topic: 'pricingtest'
+        schemaIdPayloadEncoding: 'avro'
+        partitions: 2
+        replicas: 2
+        clientId:
+          type: string
+          enum:
+            - consumer1
+            - consumer2
+            - joao
+        topicConfiguration:
+          cleanup.policy: ["delete"]
+          retention.ms: 604800000
+          retention.bytes: 1000000000
+          delete.retention.ms: 86400000
+          max.message.bytes: 1048588
+        bindingVersion: '0.4.0'        
 
   pricing.create.command:
     publish:
